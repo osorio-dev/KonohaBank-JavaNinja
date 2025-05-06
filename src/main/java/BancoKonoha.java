@@ -75,9 +75,7 @@ public class BancoKonoha {
     }
 
     public void consultarSaldo() {
-        Boolean isEmpty = contaBancariaList.isEmpty();
-
-
+        contaBancariaList.getFirst().consultarSaldo();
     }
 
     public void depositar() {

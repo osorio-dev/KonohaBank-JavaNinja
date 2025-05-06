@@ -8,7 +8,7 @@ public abstract class ContaBancaria implements Conta {
         this.saldoBancario = saldoBancario;
     }
 
-    public String getContaId() {
-        return this.id;
+    public Double getSaldo() {
+        return this.saldoBancario;
     }
 }

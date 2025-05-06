@@ -6,7 +6,7 @@ public class ContaPoupanca extends ContaBancaria{
 
     @Override
     public void consultarSaldo() {
-
+        System.out.println("Seu saldo na conta poupança é de: " + getSaldo() );
     }
 
     @Override
@@ -14,5 +14,9 @@ public class ContaPoupanca extends ContaBancaria{
 
     }
 
+    @Override
+    public Double getSaldo() {
+        return super.getSaldo();
+    }
 
 }
