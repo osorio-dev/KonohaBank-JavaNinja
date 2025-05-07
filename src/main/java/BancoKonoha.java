@@ -31,7 +31,7 @@ public class BancoKonoha {
                         break;
                     }
 
-                    consultarSaldo();
+                    contaBancariaList.getFirst().consultarSaldo();
                     break;
                 case 3:
                     if (contaBancariaList.isEmpty()) {
@@ -39,7 +39,9 @@ public class BancoKonoha {
                         break;
                     }
 
-                    depositar();
+                    System.out.println("Digite o Valor a ser Depositado em Conta");
+                    Double valor = scanner.nextDouble();
+                    contaBancariaList.getFirst().depositar(valor);
                     break;
             }
 
@@ -58,27 +60,17 @@ public class BancoKonoha {
         switch (TipoConta.values()[optionSelect]) {
             case CORRENTE:
                 ContaCorrente contaCorrente = new ContaCorrente(0.0);
-                contaBancariaList.clear();
                 contaBancariaList.add(contaCorrente);
                 break;
 
             case POUPANCA:
                 ContaPoupanca contaPoupanca = new ContaPoupanca(0.0);
-                contaBancariaList.clear();
                 contaBancariaList.add(contaPoupanca);
                 break;
         }
 
         System.out.println("Conta Criada com Sucesso!!");
         startSystemBank();
-
-    }
-
-    public void consultarSaldo() {
-        contaBancariaList.getFirst().consultarSaldo();
-    }
-
-    public void depositar() {
 
     }
 }
