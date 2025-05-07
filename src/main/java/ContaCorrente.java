@@ -6,16 +6,11 @@ public class ContaCorrente extends ContaBancaria{
 
     @Override
     public void consultarSaldo() {
-        System.out.println("Seu saldo na conta corrente é de: " + getSaldo() );
+        System.out.println("O saldo atual da sua conta corrente é de: " + this.saldoBancario);
     }
 
     @Override
     public void depositar(Double valor) {
 
-    }
-
-    @Override
-    public Double getSaldo() {
-        return super.getSaldo();
     }
 }
