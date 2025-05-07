@@ -16,7 +16,8 @@ public class BancoKonoha {
             System.out.println("1 - Criar Conta");
             System.out.println("2 - Consultar Saldo");
             System.out.println("3 - Depositar na Conta");
-            System.out.println("4 - Encerrar o Atendimento");
+            System.out.println("4 - Transferir dinheiro para outra Conta");
+            System.out.println("5 - Encerrar o Atendimento");
 
             optionSelect = scanner.nextInt();
             scanner.nextLine();
@@ -39,20 +40,20 @@ public class BancoKonoha {
                         break;
                     }
 
-                    System.out.println("Digite o Valor a ser Depositado em Conta");
+                    System.out.println("Digite o Valor a ser Depositado em Conta:");
                     Double valor = scanner.nextDouble();
                     contaBancariaList.getFirst().depositar(valor);
                     break;
             }
 
-        } while (optionSelect != 4);
+        } while (optionSelect != 5);
     }
 
     private void createAccount() {
 
         System.out.println("Selecione o Tipo da Conta");
-        System.out.println("1 - Corrente");
-        System.out.println("2 - Poupanca");
+        System.out.println("0 - Corrente");
+        System.out.println("1 - Poupanca");
 
         int optionSelect = scanner.nextInt();
         scanner.nextLine();
@@ -71,6 +72,5 @@ public class BancoKonoha {
 
         System.out.println("Conta Criada com Sucesso!!");
         startSystemBank();
-
     }
 }

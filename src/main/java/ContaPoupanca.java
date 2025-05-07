@@ -6,11 +6,12 @@ public class ContaPoupanca extends ContaBancaria{
 
     @Override
     public void consultarSaldo() {
-        System.out.println("O saldo atual da sua conta poupança é de: " + this.saldoBancario);
+        System.out.println("O saldo atual da sua conta poupança é de: R$ " + this.saldoBancario);
     }
 
     @Override
     public void depositar(Double valor) {
-
+        this.saldoBancario += valor;
+        System.out.println("Valor Depositado com Sucesso!!");
     }
 }
