@@ -16,7 +16,7 @@ public class BancoKonoha {
             System.out.println("1 - Criar Conta");
             System.out.println("2 - Consultar Saldo");
             System.out.println("3 - Depositar na Conta");
-            System.out.println("4 - Transferir dinheiro para outra Conta");
+            System.out.println("4 - Pix");
             System.out.println("5 - Encerrar o Atendimento");
 
             optionSelect = scanner.nextInt();
@@ -43,6 +43,23 @@ public class BancoKonoha {
                     System.out.println("Digite o Valor a ser Depositado em Conta:");
                     Double valor = scanner.nextDouble();
                     contaBancariaList.getFirst().depositar(valor);
+                    break;
+                case 4:
+                    if (contaBancariaList.isEmpty()) {
+                        System.out.println("Não a conta para ser Realizada o pix");
+                        break;
+                    }
+
+                    System.out.println("Digite o Valor a ser Transferido:");
+                    Double valorPix = scanner.nextDouble();
+                    scanner.nextLine();
+
+                    if (valorPix > contaBancariaList.getFirst().saldoBancario) {
+                        System.out.println("Saldo insuficiente para realizar o pix");
+                        break;
+                    }
+
+                    contaBancariaList.getFirst().pix(valorPix);
                     break;
             }
 

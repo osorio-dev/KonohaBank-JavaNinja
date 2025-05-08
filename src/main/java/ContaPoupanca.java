@@ -14,4 +14,10 @@ public class ContaPoupanca extends ContaBancaria{
         this.saldoBancario += valor;
         System.out.println("Valor Depositado com Sucesso!!");
     }
+
+    @Override
+    public void pix(Double valorPix) {
+        this.saldoBancario -= valorPix;
+        System.out.println("Pix realizado com Sucesso!!!");
+    }
 }
